@@ -20,8 +20,8 @@ export const PROJECTS = [
     title: "Portfolio",
     description: "A professional portfolio where I have included some of my projects.",
     tech: ["Next.js","Tailwind"],
-    link: "https://GasDelivery.com",
-    github: "https://github.com/Benard-Ndiritu/GasDelivery",
+    link: "https://portfolio-ndiritus-projects.vercel.app/",
+    github: "https://github.com/Benard-Ndiritu/Portfolio.git",
     image:"/projects/portfolio.png"
   },
 ];
