@@ -24,4 +24,12 @@ export const PROJECTS = [
     github: "https://github.com/Benard-Ndiritu/Portfolio.git",
     image:"/projects/portfolio.png"
   },
+  {
+    title: "Simping site",
+    description: "A simple page where you ask a girl out on a date.",
+    tech: ["HTML","CSS","Java Script"],
+    link: "https://qmanydlee.netlify.app/",
+    github: "https://github.com/Benard-Ndiritu/SM.git",
+    image:"/projects/simp.png"
+  },
 ];
