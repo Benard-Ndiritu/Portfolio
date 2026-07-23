@@ -32,4 +32,12 @@ export const PROJECTS = [
     github: "https://github.com/Benard-Ndiritu/SM.git",
     image:"/projects/simp.png"
   },
+  {
+    title: "Crotchet marketing",
+    description: "A simple portfolio whereby crotchet artists can showcase their skills as well as market their products.",
+    tech: ["HTML","CSS","Java Script"],
+    link: "https://benardcrotchet.netlify.app/",
+    github: "https://github.com/Benard-Ndiritu/Crotchet.git",
+    image:"/projects/tote-bag.jpeg"
+  },
 ];
