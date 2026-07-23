@@ -111,7 +111,7 @@ export default function Portfolio() {
         <h2 className="text-3xl font-bold mb-12">Tech Stack</h2>
 
         <div className="flex flex-wrap gap-4">
-          {["React", "Next.js", "Node.js", "PostgreSQL", "AWS", "Docker","Django"].map(
+          {["React", "Next.js", "Node.js", "PostgreSQL", "AWS", "Docker","Django", "Java", "Numpy", "Angular", "React Native", "Pandas"].map(
             (tech) => (
               <span
                 key={tech}
