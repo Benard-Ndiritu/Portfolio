@@ -40,4 +40,12 @@ export const PROJECTS = [
     github: "https://github.com/Benard-Ndiritu/Crotchet.git",
     image:"/projects/tote-bag.jpeg"
   },
+  {
+    title: "POS system",
+    description: "A POS system whereby sellers in different businesses can use to monitor and automate their sales.",
+    tech: ["HTML","CSS","Java Script", "Python", "Docker"],
+    link: "https://pos-pb69.onrender.com/",
+    github: "https://github.com/Benard-Ndiritu/POS.git",
+    image:"/projects/POS.jpeg"
+  },
 ];
