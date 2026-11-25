@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f5f6f8;
+  --ink: #10172a;
+  --muted: #566076;
+  --line: #d5dae3;
+  --suit: #24467f;
+  --ochre: #f0a92b;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-suit: var(--suit);
+  --color-ochre: var(--ochre);
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background: var(--paper);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-archivo), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--ochre);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+@layer components {
+  .display {
+    font-stretch: 112%;
+    font-weight: 620;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    text-wrap: balance;
+  }
+
+  .link-underline {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px
+      no-repeat;
+    padding-bottom: 3px;
+    transition: background-size 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1.5px;
+  }
+
+  /* Names in the stack list stretch on the width axis when pointed at. */
+  .stretch-word {
+    font-stretch: 100%;
+    font-weight: 560;
+    letter-spacing: -0.03em;
+    transition:
+      font-stretch 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+      color 0.25s ease;
+  }
+  .stretch-word:hover {
+    font-stretch: 125%;
+    color: var(--suit);
+  }
+}
+
+/* Hero entrance. Plain CSS so the content is never stuck hidden without JS. */
+@keyframes rise {
+  from {
+    transform: translateY(105%);
+  }
+}
+@keyframes unveil {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+@keyframes settle {
+  from {
+    transform: scale(1.12);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+.line-mask {
+  display: block;
+  overflow: hidden;
+  /* Room for descenders inside the mask. */
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+.line-mask > span {
+  display: block;
+  animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+.unveil {
+  animation: unveil 1.2s cubic-bezier(0.76, 0, 0.24, 1) backwards;
+}
+.settle {
+  animation: settle 1.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+.fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
