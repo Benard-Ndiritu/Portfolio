@@ -89,7 +89,7 @@ export const RESUME = "/Benard_Resume.pdf";
 
 export const SOCIALS = [
   { label: "GitHub", href: "https://github.com/Benard-Ndiritu" },
-  { label: "LinkedIn", href: "www.linkedin.com/in/benard-ndiritu-578276212" },
+  { label: "LinkedIn", href: "hhtps://linkedin.com/in/benard-ndiritu-578276212" },
   { label: "Instagram", href: "https://instagram.com/mirror_core" },
   { label: "X", href: "https://x.com/Caspianqman" },
 ];
